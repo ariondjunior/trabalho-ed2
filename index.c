@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "TAD.c" 
-#include "Cadastro.c"
+#include "TAD/TAD.c" 
+#include "menu/Cadastro.c"
 
 int main() {
     while(1){
@@ -28,7 +28,6 @@ int main() {
         case 4: printf("Saindo...");
             system("pause");
 }
-    
     
 
     return 0;
