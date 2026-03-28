@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "cadastro.h"
 
 typedef struct cliente{
     char nome[50];
@@ -7,13 +8,13 @@ typedef struct cliente{
     char email[60];
     char data[11];
 
-}Cliente; 
+} Cliente; 
 
-void cadastrar() {
+void cadastrar(void) {
     Cliente *novo = (Cliente*)malloc(sizeof(Cliente));
     
     if (novo != NULL) {
-        printf("Insira o nome do cliente: \n");
+        printf("Insira o nome do clienteee: \n");
         
         scanf(" %[^\n]", novo->nome); 
 
@@ -29,7 +30,7 @@ void cadastrar() {
  
         printf("\nCliente %s cadastrado com sucesso!\n", novo->nome);
         
-     
+        free(novo);
     } else {
         printf("Erro ao alocar memoria!\n");
     }
