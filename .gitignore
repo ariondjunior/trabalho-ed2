@@ -1,0 +1,14 @@
+# Binários e objetos C
+*.o
+*.out
+*.a
+*.so
+app
+
+# Pastas de build comuns
+build/
+bin/
+
+# Arquivos temporários
+*.swp
+*.tmp
