@@ -6,8 +6,9 @@ SRCS = \
 	index.c \
 	menu/cadastro.c \
 	menu/contato.c \
+	menu/relatorios.c \
 	TAD/fila/fila.c \
-	TAD/listadc/listadc.c
+	TAD/listadc/listadc.c \
 
 
 OBJS = $(SRCS:.c=.o)

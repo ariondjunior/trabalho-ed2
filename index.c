@@ -4,6 +4,7 @@
 #include "TAD/listadc/listadc.h"
 #include "menu/cadastro.h"
 #include "menu/contato.h"
+#include "menu/relatorios.h"
 
 int main() {
     int menu;
@@ -36,7 +37,7 @@ int main() {
 
             case 3:
                 printf("Relatorios...\n");
-                // relatorios(aguardando);
+                relatorios(aguardando);
                 break;
 
             case 0:

@@ -56,7 +56,7 @@ void realizarContato(ListaDc* lista, Fila* compradores, ListaDc* arquivados) {
         obterAtualListaDc(lista, &c);
         exibirCliente(&c);
 
-        printf("\n[1] Proximo\n[2] Anterior\n[3] Buscar\n[4] Voltar ao início\n[5] Finalizar\n");
+        printf("\n[1] Proximo\n[2] Anterior\n[3] Buscar\n[4] Voltar ao início\n[5] Finalizar\nOpcao: ");
         scanf("%d", &op);
 
         if (op == 1)
