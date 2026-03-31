@@ -1,6 +1,8 @@
 #ifndef CADASTRO_H
 #define CADASTRO_H
 
-void cadastrar(void);
+#include "../TAD/listadc/listadc.h"
+
+void cadastrar(ListaDc* lista);
 
 #endif

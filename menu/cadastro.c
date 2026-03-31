@@ -1,37 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "cadastro.h"
+#include "../TAD/cliente.h"
+#include "../TAD/listadc/listadc.h"
 
-typedef struct cliente{
-    char nome[50];
-    int numero;
-    char email[60];
-    char data[11];
+void cadastrar(ListaDc* lista) 
+{
+    Cliente c;
 
-} Cliente; 
+    memset(&c, 0, sizeof(Cliente));
+    system("clear");
 
-void cadastrar(void) {
-    Cliente *novo = (Cliente*)malloc(sizeof(Cliente));
-    
-    if (novo != NULL) {
-        printf("Insira o nome do clienteee: \n");
-        
-        scanf(" %[^\n]", novo->nome); 
+    printf("Nome: ");
+    scanf(" %99[^\n]", c.nome);
 
-        printf("Insira o numero: \n");
-        scanf("%d", &novo->numero); 
+    printf("Telefone: ");
+    scanf(" %19s", c.telefone);
 
-        printf("Insira o email: \n");
-        scanf("%s", novo->email);
+    printf("Email: ");
+    scanf(" %99s", c.email);
 
-        printf("Insira a data (DD/MM/AAAA): \n");
-        scanf("%s", novo->data);
+    printf("Data Captação (dd/mm/yyyy): ");
+    scanf(" %10s", c.dataCaptacao);
 
- 
-        printf("\nCliente %s cadastrado com sucesso!\n", novo->nome);
-        
-        free(novo);
-    } else {
-        printf("Erro ao alocar memoria!\n");
-    }
+    inserirFimListaDc(lista, c);
+
+    system("clear");
+    printf("\nCliente cadastrado com sucesso!\n");
 }

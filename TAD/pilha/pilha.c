@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "pilha.h"
-#include "../no.h"
 
 void inicializar_p(Pilha *p) {
     p->topo = NULL;

@@ -1,7 +1,11 @@
 #ifndef PILHA_H_
 #define PILHA_H_
 
-#include "../no.h"
+typedef struct no 
+{
+    int info;
+    struct no* prox;
+} No;
 
 typedef struct {
     No *topo;

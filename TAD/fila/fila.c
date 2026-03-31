@@ -2,15 +2,25 @@
 #include <stdlib.h>
 #include "fila.h"
 #include "../no.h"
+#include "../cliente.h"
 
 
-void inicializar_f(Fila *f) {
+Fila* inicializar_f() 
+{
+    Fila* f = (Fila *) malloc(sizeof(Fila));
+    if (!f) return NULL;
+
     f->inicio = NULL;
     f->fim = NULL;
     f->tamanho = 0;
+
+    return f;
 }
 
-void enfileirar(Fila *f, int valor) {
+void enfileirar(Fila *f, Cliente valor) 
+{
+    if (!f) return;
+
     No *novo = (No*)malloc(sizeof(No));
     if (novo) {
         novo->info = valor;
@@ -27,14 +37,13 @@ void enfileirar(Fila *f, int valor) {
     }
 }
 
-int desenfileirar(Fila *f) {
-    if (f->inicio == NULL) {
-        printf("Fila vazia!\n");
-        return -1;
+int desenfileirar(Fila *f, Cliente* c) {
+    if (f == NULL || f->inicio == NULL) {
+        return 0;
     }
 
     No *aux = f->inicio;
-    int valor = aux->info;
+    *c = aux->info;
 
     f->inicio = aux->prox;
 
@@ -44,21 +53,35 @@ int desenfileirar(Fila *f) {
 
     free(aux);
     f->tamanho--;
-    return valor;
+
+    return 1;
 }
 
 void imprimir_f(Fila *f) {
-    No *aux = f->inicio;
+    No *aux;
+
+    if (!f) {
+        printf("Fila inexistente.\n");
+        return;
+    }
+
+    aux = f->inicio;
     printf("Inicio -> ");
     while (aux != NULL) {
-        printf("[%d] ", aux->info);
+        printf("[%s] ", aux->info.nome);
         aux = aux->prox;
     }
     printf("<- Fim\n");
 }
 
 void liberar_f(Fila *f) {
+    Cliente descartado;
+
+    if (!f) return;
+
     while (f->inicio != NULL) {
-        desenfileirar(f);
+        desenfileirar(f, &descartado);
     }
+
+    free(f);
 }

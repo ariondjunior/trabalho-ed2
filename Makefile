@@ -5,9 +5,10 @@ TARGET = app
 SRCS = \
 	index.c \
 	menu/cadastro.c \
+	menu/contato.c \
 	TAD/fila/fila.c \
-	TAD/pilha/pilha.c \
-	TAD/lista/lista.c
+	TAD/listadc/listadc.c
+
 
 OBJS = $(SRCS:.c=.o)
 

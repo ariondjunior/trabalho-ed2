@@ -1,8 +1,10 @@
 #ifndef NO_H_
 #define NO_H_
 
+#include "cliente.h"
+
 typedef struct no {
-    int info;
+    Cliente info;
     struct no *prox;
 } No;
 
