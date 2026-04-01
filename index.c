@@ -5,9 +5,10 @@
 #include "menu/cadastro.h"
 #include "menu/contato.h"
 #include "menu/relatorios.h"
+#include "utilities/utilities.h"
 
 int main() {
-    int menu;
+    int menu = -1;
 
     ListaDc* aguardando = criarListaDc();
     Fila* compradores = inicializar_f();
@@ -18,30 +19,34 @@ int main() {
         printf("[1] Cadastrar cliente\n");
         printf("[2] Realizar contato\n");
         printf("[3] Relatórios\n");
-        printf("[0] Sair\n");
+        printf("[4] Sair\n");
+
         printf("Opcao: ");
-        scanf("%d", &menu);
+        if (lerInteiro(&menu) == 0) {
+            break;
+        }
 
         printf("\n");
 
+        if (menu == -1) {
+            printf("Opcao invalida!\n");
+            continue;
+        }
+
         switch(menu) {
             case 1:
-                printf("Cadastrando...\n");
                 cadastrar(aguardando);
                 break;
 
             case 2:
-                printf("Realizando contato...\n");
                 realizarContato(aguardando, compradores, arquivados);
                 break;
 
             case 3:
-                printf("Relatorios...\n");
                 relatorios(aguardando);
                 break;
 
-            case 0:
-                printf("Saindo...\n");
+            case 4:
                 break;
 
             default:

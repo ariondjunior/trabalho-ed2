@@ -9,6 +9,7 @@ SRCS = \
 	menu/relatorios.c \
 	TAD/fila/fila.c \
 	TAD/listadc/listadc.c \
+	utilities/utilities.c
 
 
 OBJS = $(SRCS:.c=.o)
