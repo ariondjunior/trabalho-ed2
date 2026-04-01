@@ -38,4 +38,4 @@ Este projeto foi desenvolvido como parte da atividade avaliativa proposta pelo d
 
 A motivação técnica do trabalho reside na aplicação prática de Tipos Abstratos de Dados (TADs) estudados em sala de aula utilizando a linguagem C. Para otimizar o sistema, optamos pela implementação de Fila, que gerenciam de forma organizada o fluxo de compradores, e Listas Duplamente Encadeadas, escolhidas estrategicamente para permitir uma navegação bidirecional eficiente nas estruturas de Clientes aguardando contato e Clientes arquivado.
 
-[Baixar o PDF do projeto](./assets/Trabalho_I_de_EDI%281%29.pdf)
+[Baixar o PDF do projeto](assets/Trabalho.pdf)
