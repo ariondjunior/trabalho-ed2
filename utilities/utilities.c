@@ -21,6 +21,42 @@ int lerInteiro(int* valor) {
     return -1;
 }
 
+int calcularDiasEspera(char *dataCaptacao) {
+    int dia, mes, ano;
+    struct tm dataCap = {0};
+    time_t tempoCaptacao, tempoAtual;
+    double diferencaSegundos;
+
+    sscanf(dataCaptacao, "%d/%d/%d", &dia, &mes, &ano);
+
+    dataCap.tm_mday = dia;
+    /** Professor esses tm_mon e tm_year sao subtraidos por esses valores, pois sao uma convencao do mktime*/
+    dataCap.tm_mon = mes - 1;
+    dataCap.tm_year = ano - 1900;
+    dataCap.tm_hour = 0;
+    dataCap.tm_min = 0;
+    dataCap.tm_sec = 0;
+
+    tempoCaptacao = mktime(&dataCap);
+    time(&tempoAtual);
+
+    diferencaSegundos = difftime(tempoAtual, tempoCaptacao);
+
+    return (int)(diferencaSegundos / (60 * 60 * 24));
+}
+
+void exibirClientesEmEspera(ListaDc* aguardando) {
+
+    printf("===== RELATORIO =====\n");
+    if (aguardando->inicio == NULL)
+        printf("Nenhum cliente aguardando contato.\n");
+    else {
+        NoDc* aux;
+        for (aux = aguardando->inicio; aux != NULL; aux = aux->prox)
+            printf("Nome: %s | Dias de espera: %d\n", aux->info.nome, calcularDiasEspera(aux->info.dataCaptacao));
+    }
+}
+
 void preencherDadosCompra(Cliente* c) {
     printf("Data de nascimento (dd/mm/yyyy): ");
     scanf(" %10s", c->dataNascimento);
@@ -55,40 +91,5 @@ void exibirCliente(Cliente* c) {
     printf("Data de captacao: %s\n", c->dataCaptacao);
 }
 
-void exibirClientesEmEspera(ListaDc* aguardando) {
 
-    printf("===== RELATORIO =====\n");
-    if (aguardando->inicio == NULL)
-        printf("Nenhum cliente aguardando contato.\n");
-    else {
-        NoDc* aux;
-        for (aux = aguardando->inicio; aux != NULL; aux = aux->prox)
-            printf("Nome: %s | Dias de espera: %d\n", aux->info.nome, calcularDiasEspera(aux->info.dataCaptacao));
-    }
-}
-
-
-int calcularDiasEspera(char *dataCaptacao) {
-    int dia, mes, ano;
-    struct tm dataCap = {0};
-    time_t tempoCaptacao, tempoAtual;
-    double diferencaSegundos;
-
-    sscanf(dataCaptacao, "%d/%d/%d", &dia, &mes, &ano);
-
-    dataCap.tm_mday = dia;
-    /** Professor esses tm_mon e tm_year sao subtraidos por esses valores, pois sao uma convencao do mktime*/
-    dataCap.tm_mon = mes - 1;
-    dataCap.tm_year = ano - 1900;
-    dataCap.tm_hour = 0;
-    dataCap.tm_min = 0;
-    dataCap.tm_sec = 0;
-
-    tempoCaptacao = mktime(&dataCap);
-    time(&tempoAtual);
-
-    diferencaSegundos = difftime(tempoAtual, tempoCaptacao);
-
-    return (int)(diferencaSegundos / (60 * 60 * 24));
-}
 

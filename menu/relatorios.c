@@ -28,7 +28,7 @@ void relatorios(ListaDc* aguardando) {
             printf("===== RELATORIO =====\n");
             printf("Clientes aguardando contato: %d\n", aguardando->tamanho);
         } else if (op == 2) {
-            exibirClienteEmEspera(&aguardando);
+            exibirClientesEmEspera(aguardando);
         } else if (op != 0) {
             printf("Opcao invalida!\n");
         }
