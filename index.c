@@ -10,10 +10,14 @@
 int main() {
     int menu = -1;
 
+
+    //Inicialização das listas e fila utilizadas no decorrer do progama
     ListaDc* aguardando = criarListaDc();
     Fila* compradores = inicializar_f();
     ListaDc* arquivados = criarListaDc();  
 
+
+    //Inicialização do progama principal com do while para o progama rodar em loop até que seja solicitado a saida
     do {
         printf("\n===== MENU =====\n");
         printf("[1] Cadastrar cliente\n");
@@ -55,6 +59,7 @@ int main() {
 
     } while (menu != 0);
 
+    //Liberação de memória das variáveis de listas e filas inicializadas no inicio do progama
     liberarListaDc(aguardando);
     liberarListaDc(arquivados);
     liberar_f(compradores);
