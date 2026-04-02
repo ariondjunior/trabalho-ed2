@@ -36,7 +36,7 @@ Para adicionar esse novo arquivo na compilação do Makefile, adicione o caminho
 
 Este projeto foi desenvolvido como parte da atividade avaliativa proposta pelo docente Wayner Moyses Marcelino para a disciplina de Estrutura de Dados I, na Universidade Vila Velha (UVV). O objetivo central é a simulação de um sistema de telemarketing que resolva problemas reais de fluxo de trabalho, como o cadastro de clientes, a oferta ativa de produtos e a posterior arquivação de contatos.
 
-A motivação técnica do trabalho reside na aplicação prática de Tipos Abstratos de Dados (TADs) estudados em sala de aula utilizando a linguagem C. Para otimizar o sistema, optamos pela implementação de Fila, que gerenciam de forma organizada o fluxo de compradores, e Listas Duplamente Encadeadas, escolhidas estrategicamente para permitir uma navegação bidirecional eficiente nas estruturas de Clientes aguardando contato e Clientes arquivado.
+A motivação técnica do trabalho reside na aplicação prática de Tipos Abstratos de Dados (TADs) estudados em sala de aula utilizando a linguagem C. Para otimizar o sistema, optamos pela implementação de Fila, que gerenciam de forma organizada o fluxo de compradores, e Listas Duplamente Encadeadas, escolhidas estrategicamente para permitir uma navegação bidirecional eficiente nas estruturas de *Clientes aguardando contato* e *Clientes arquivados*.
 
 [Baixar o PDF do projeto](assets/Trabalho.pdf)
 
