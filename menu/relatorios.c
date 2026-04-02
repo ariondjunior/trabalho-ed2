@@ -4,6 +4,7 @@
 #include "../TAD/listadc/listadc.h"
 #include "../utilities/utilities.h"
 
+//Menu de relátorios dos clientes em aguardo
 void relatorios(ListaDc* aguardando) {
     int op = -1;
 
@@ -28,6 +29,7 @@ void relatorios(ListaDc* aguardando) {
             printf("===== RELATORIO =====\n");
             printf("Clientes aguardando contato: %d\n", aguardando->tamanho);
         } else if (op == 2) {
+            //Utilitário
             exibirClientesEmEspera(aguardando);
         } else if (op != 0) {
             printf("Opcao invalida!\n");

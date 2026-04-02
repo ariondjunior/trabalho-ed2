@@ -7,17 +7,16 @@
 #include "menu/relatorios.h"
 #include "utilities/utilities.h"
 
+
 int main() {
     int menu = -1;
 
-
-    //Inicialização das listas e fila utilizadas no decorrer do progama
+    // --- Inicialização de Estruturas ---
+    // Cria as listas duplamente encadeadas circulares e a fila de processamento
     ListaDc* aguardando = criarListaDc();
     Fila* compradores = inicializar_f();
     ListaDc* arquivados = criarListaDc();  
 
-
-    //Inicialização do progama principal com do while para o progama rodar em loop até que seja solicitado a saida
     do {
         printf("\n===== MENU =====\n");
         printf("[1] Cadastrar cliente\n");
@@ -26,40 +25,49 @@ int main() {
         printf("[4] Sair\n");
 
         printf("Opcao: ");
+        
+        // Proteção contra entradas não numéricas via função utilitária
         if (lerInteiro(&menu) == 0) {
             break;
         }
 
         printf("\n");
 
+        // Validação de estado inicial do menu
         if (menu == -1) {
             printf("Opcao invalida!\n");
             continue;
         }
 
+        // --- Direcionamento de Funcionalidades ---
         switch(menu) {
             case 1:
+                // Encaminha para o fluxo de cadastro de novos clientes
                 cadastrar(aguardando);
                 break;
 
             case 2:
+                // Fluxo de navegação e contato com clientes já cadastrados
                 realizarContato(aguardando, compradores, arquivados);
                 break;
 
             case 3:
+                // Geração de estatísticas e listagens
                 relatorios(aguardando);
                 break;
 
             case 4:
+                // Mensagem de encerramento e preparação para saída
+                printf("Encerrando o sistema...\n");
                 break;
 
             default:
                 printf("Opcao invalida!\n");
         }
 
-    } while (menu != 0);
+    } while (menu != 4);
 
-    //Liberação de memória das variáveis de listas e filas inicializadas no inicio do progama
+    // --- Limpeza e Desalocação ---
     liberarListaDc(aguardando);
     liberarListaDc(arquivados);
     liberar_f(compradores);

@@ -3,6 +3,9 @@
 #include "../TAD/listadc/listadc.h"
 #include "../TAD/cliente.h"
 
+
+//Utilitários para auxílio de eficiência/organização do código
+
 int lerInteiro(int* valor) {
     int inteiro;
 
