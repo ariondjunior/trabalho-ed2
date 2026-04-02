@@ -41,8 +41,8 @@ A motivação técnica do trabalho reside na aplicação prática de Tipos Abstr
 [Baixar o PDF do projeto](assets/Trabalho.pdf)
 
 ## Integrantes
-Arion Dantas da Silva Junior,<br>
-Fábio Lucas Lima Ferreira,<br>
-Felippe Costa Wernersbach Stein,<br>
+Arion Dantas da Silva Junior<br>
+Fábio Lucas Lima Ferreira<br>
+Felippe Costa Wernersbach Stein<br>
 Murilo Henrique Siepierski Lavagnoli Broco Pereira
 
